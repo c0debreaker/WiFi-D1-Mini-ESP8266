@@ -1,4 +1,7 @@
 # WiFi-D1-Mini-ESP8266 PRO USB-TTL CP2104
+
+![WiFi Di Mini Pro](https://raw.githubusercontent.com/c0debreaker/WiFi-D1-Mini-ESP8266/master/wifid1mini.png)
+
 WiFi D1 mini PRO is an integrated ESP8266-based WiFi-enabled microprocessor unit equipped with 32Mb (megabits) of flash memory. It is pin-compatible with the WeMos D1 mini / mini PRO boards.
 
 WiFi D1 mini PRO comes with an embedded CERAMIC WiFi antenna on-board, and has a connector for an optional external antenna.
