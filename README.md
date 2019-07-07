@@ -79,7 +79,7 @@ For Mac OSX, the link is https://www.silabs.com/documents/public/software/Mac_OS
 ### Warning
 There are times installation of driver fails. This happens when the OSX kernel blocks it. To verify, go to System Preferences -> Security & Privacy -> General. If you see an application listed as being blocked, allow it by clicking the `Allow` button.
 
-### Tip(s) May or may not be needed
+### Tip(s) - May or may not be needed
 I've been troubleshooting this for the past few days and I ran out of ideas until someone told me to install CP210x driver. It still failed for me. However, the same driver worked when I unloaded `/Library/Extensions/usbserial.kext` and `/System/Library/Extensions/usb.kext`. It may not work on some systems since they may not be installed.
 
 ```sh
@@ -101,11 +101,21 @@ crw-rw-rw-  1 root  wheel   21,  23 Jul  6 18:41 /dev/cu.SLAB_USBtoUART
 ```
 
 ## Testing using Arduino
-Before you can use your WiFi D1 Mini device, you'll need to add a list of unsupported boards in Arduino IDE's Preferences. You need to add `http://arduino.esp8266.com/stable/package_esp8266com_index.json` in Preferences. After making changes in Preferences, you need to search ESP8266 under Board Manager in the Arduino IDE and install it.
+Before you can use your WiFi D1 Mini device, you'll need to add a list of unsupported boards in Arduino IDE's Preferences. You need to add `http://arduino.esp8266.com/stable/package_esp8266com_index.json` in Preferences.
+
+![Arduino IDE Preferences](https://raw.githubusercontent.com/c0debreaker/WiFi-D1-Mini-ESP8266/master/preferences.png)
+
+After making changes in Preferences, you need to search ESP8266 under Board Manager in the Arduino IDE and install it.
+
+![Board Manager](https://raw.githubusercontent.com/c0debreaker/WiFi-D1-Mini-ESP8266/master/esp8266module.png)
 
 You're almost ready in uploading a sample sketch. However, before you can upload a new code, you need to select "Generic ESP8266 Module" in Tools -> Board. Set the Upload Speed to 115200. I was shocked that it failed when I chose 9600. I've always used 9600 befored. Lastly, select /dev/cu.SLAB_USBtoUART in Ports.
 
+![Board Settings](https://raw.githubusercontent.com/c0debreaker/WiFi-D1-Mini-ESP8266/master/boardsettings.png)
+
 Now that's everything is setup, let's upload an example sketch called Blink. Go to File -> Examples -> ESP8266 -> Blink.
+
+![Blink Sketch](https://raw.githubusercontent.com/c0debreaker/WiFi-D1-Mini-ESP8266/master/blinksketch.png)
 
 You should see an output of the upload task similar below. You can change the output by turning off or unchecking `compilation` in Preferences.
 
@@ -167,4 +177,4 @@ Hard resetting via RTS pin...
 
 If the upload went well, you should see the led on the device blink on and off.
 
-Congratulations!
+# Congratulations!
